@@ -1,0 +1,22 @@
+hoaithu@hoaithu:~/git$ ls
+h2  hello-world  testing
+hoaithu@hoaithu:~/git$ cd hello-world/
+hoaithu@hoaithu:~/git/hello-world$ ls
+file.txt  git-help.txt  README.md
+hoaithu@hoaithu:~/git/hello-world$ git add .
+hoaithu@hoaithu:~/git/hello-world$ git commit -m "Commit git help" -a
+[master 5d0d209] Commit git help
+ 1 file changed, 204 insertions(+)
+ create mode 100644 git-help.txt
+hoaithu@hoaithu:~/git/hello-world$  git push origin master
+Username for 'https://github.com': nguyenthihoaithu1923@gmail.com
+Password for 'https://nguyenthihoaithu1923@gmail.com@github.com': 
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 2.54 KiB | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/thunth/hello-world.git
+   07ae4fb..5d0d209  master -> master
+hoaithu@hoaithu:~/git/hello-world$ 
+
