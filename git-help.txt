@@ -1,0 +1,204 @@
+hoaithu@hoaithu:~$ sudo apt-get install git
+[sudo] password for hoaithu: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  git-man liberror-perl
+Suggested packages:
+  git-daemon-run git-daemon-sysvinit git-doc git-el git-email git-gui gitk
+  gitweb git-arch git-bzr git-cvs git-mediawiki git-svn
+The following NEW packages will be installed:
+  git git-man liberror-perl
+0 upgraded, 3 newly installed, 0 to remove and 7 not upgraded.
+Need to get 3.346 kB of archives.
+After this operation, 21,6 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://vn.archive.ubuntu.com/ubuntu/ trusty/main liberror-perl all 0.17-1.1 [21,1 kB]
+Get:2 http://vn.archive.ubuntu.com/ubuntu/ trusty-updates/main git-man all 1:1.9.1-1ubuntu0.1 [698 kB]
+Get:3 http://vn.archive.ubuntu.com/ubuntu/ trusty-updates/main git amd64 1:1.9.1-1ubuntu0.1 [2.627 kB]
+Fetched 3.346 kB in 9s (355 kB/s)                                              
+Selecting previously unselected package liberror-perl.
+(Reading database ... 197757 files and directories currently installed.)
+Preparing to unpack .../liberror-perl_0.17-1.1_all.deb ...
+Unpacking liberror-perl (0.17-1.1) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../git-man_1%3a1.9.1-1ubuntu0.1_all.deb ...
+Unpacking git-man (1:1.9.1-1ubuntu0.1) ...
+Selecting previously unselected package git.
+Preparing to unpack .../git_1%3a1.9.1-1ubuntu0.1_amd64.deb ...
+Unpacking git (1:1.9.1-1ubuntu0.1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up liberror-perl (0.17-1.1) ...
+Setting up git-man (1:1.9.1-1ubuntu0.1) ...
+Setting up git (1:1.9.1-1ubuntu0.1) ...
+hoaithu@hoaithu:~$ clear
+
+hoaithu@hoaithu:~$ git config --global user.name "Hoai Thu"
+hoaithu@hoaithu:~$ git config --global user.email "nguyenthihoaithu1923@gmail.com"
+hoaithu@hoaithu:~$ git config --list
+user.name=Hoai Thu
+user.email=nguyenthihoaithu1923@gmail.com
+hoaithu@hoaithu:~$ ls
+Desktop    Downloads         Music     Pictures  Templates  Videos
+Documents  examples.desktop  mytest.c  Public    thu
+hoaithu@hoaithu:~$ cd ..
+hoaithu@hoaithu:/home$ ls
+hoaithu
+hoaithu@hoaithu:/home$ cd /
+hoaithu@hoaithu:/$ cd ../
+hoaithu@hoaithu:/$ cd ..
+hoaithu@hoaithu:/$ ls
+bin    dev   initrd.img      lib64       mnt   root  srv  usr      vmlinuz.old
+boot   etc   initrd.img.old  lost+found  opt   run   sys  var
+cdrom  home  lib             media       proc  sbin  tmp  vmlinuz
+hoaithu@hoaithu:/$ mkdir -p ~/git/testing ; cd ~/git/testing
+hoaithu@hoaithu:~/git/testing$ ls
+hoaithu@hoaithu:~/git/testing$ cd ..
+hoaithu@hoaithu:~/git$ cd ..
+hoaithu@hoaithu:~$ ls
+Desktop    Downloads         git    mytest.c  Public     thu
+Documents  examples.desktop  Music  Pictures  Templates  Videos
+hoaithu@hoaithu:~$ clear
+
+hoaithu@hoaithu:~$ cd ~/git/testing/
+hoaithu@hoaithu:~/git/testing$ touch file.txt
+hoaithu@hoaithu:~/git/testing$ ls
+file.txt
+hoaithu@hoaithu:~/git/testing$ nano file.txt 
+hoaithu@hoaithu:~/git/testing$ 
+hoaithu@hoaithu:~/git/testing$ git init
+Initialized empty Git repository in /home/hoaithu/git/testing/.git/
+hoaithu@hoaithu:~/git/testing$ git add .
+hoaithu@hoaithu:~/git/testing$ git commit -m "Initial Commit 123" -a
+[master (root-commit) 75281a4] Initial Commit 123
+ 1 file changed, 2 insertions(+)
+ create mode 100644 file.txt
+hoaithu@hoaithu:~/git/testing$ git remote add origin https://github.com/thunth/hello-world
+fatal: remote origin already exists.
+hoaithu@hoaithu:~/git/testing$ git remote rm origin
+hoaithu@hoaithu:~/git/testing$ git remote add origin https://github.com/thunth/hello-world
+hoaithu@hoaithu:~/git/testing$ git remote -v
+origin	https://github.com/thunth/hello-world (fetch)
+origin	https://github.com/thunth/hello-world (push)
+hoaithu@hoaithu:~/git/testing$ git push origin master 
+Username for 'https://github.com': nguyenthihoaithu1923@gmail.com
+Password for 'https://nguyenthihoaithu1923@gmail.com@github.com': 
+To https://github.com/thunth/hello-world
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/thunth/hello-world'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+hoaithu@hoaithu:~/git/testing$ git pull
+warning: no common commits
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/thunth/hello-world
+ * [new branch]      master     -> origin/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+hoaithu@hoaithu:~/git/testing$ git push origin master 
+Username for 'https://github.com': nguyenthihoaithu1923@gmail.com
+Password for 'https://nguyenthihoaithu1923@gmail.com@github.com': 
+To https://github.com/thunth/hello-world
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/thunth/hello-world'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+hoaithu@hoaithu:~/git/testing$ git pull https://github.com/thunth/hello-world.git master
+From https://github.com/thunth/hello-world
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+hoaithu@hoaithu:~/git/testing$ git push origin master Username for 'https://github.com': nguyenthihoaithu1923@gmail.com
+Password for 'https://nguyenthihoaithu1923@gmail.com@github.com': 
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 557 bytes | 0 bytes/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/thunth/hello-world
+   2089f55..07ae4fb  master -> master
+hoaithu@hoaithu:~/git/testing$ ls
+file.txt  README.md
+hoaithu@hoaithu:~/git/testing$ cd ..
+hoaithu@hoaithu:~/git$ ls
+testing
+hoaithu@hoaithu:~/git$ git clone https://github.com/thunth/hello-world.git
+Cloning into 'hello-world'...
+remote: Counting objects: 8, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 8 (delta 0), reused 5 (delta 0), pack-reused 0
+Unpacking objects: 100% (8/8), done.
+Checking connectivity... done.
+hoaithu@hoaithu:~/git$ ls
+hello-world  testing
+hoaithu@hoaithu:~/git$ cd hello-world/
+hoaithu@hoaithu:~/git/hello-world$ ls
+file.txt  README.md
+hoaithu@hoaithu:~/git/hello-world$ cd ..
+hoaithu@hoaithu:~/git$ git clone https://github.com/thunth/hello-world.git test1Cloning into 'test1'...
+remote: Counting objects: 8, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 8 (delta 0), reused 5 (delta 0), pack-reused 0
+Unpacking objects: 100% (8/8), done.
+Checking connectivity... done.
+hoaithu@hoaithu:~/git$ ls
+hello-world  test1  testing
+hoaithu@hoaithu:~/git$ git clone https://github.com/thunth/hello-2.git h2
+Cloning into 'h2'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+Checking connectivity... done.
+hoaithu@hoaithu:~/git$ ls
+h2  hello-world  test1  testing
+hoaithu@hoaithu:~/git$ cd h2/
+hoaithu@hoaithu:~/git/h2$ ls
+README.md
+hoaithu@hoaithu:~/git/h2$ git push origin master
+Username for 'https://github.com': nguyenthihoaithu1923@gmail.com
+Password for 'https://nguyenthihoaithu1923@gmail.com@github.com': 
+Everything up-to-date
+hoaithu@hoaithu:~/git/h2$ nano c1.txt
+hoaithu@hoaithu:~/git/h2$  git push origin master
+Username for 'https://github.com': nguyenthihoaithu1923@gmail.com
+Password for 'https://nguyenthihoaithu1923@gmail.com@github.com': 
+Everything up-to-date
+hoaithu@hoaithu:~/git/h2$ git add .
+hoaithu@hoaithu:~/git/h2$ git push origin master
+Username for 'https://github.com': nguyenthihoaithu1923@gmail.com
+Password for 'https://nguyenthihoaithu1923@gmail.com@github.com': 
+Everything up-to-date
+hoaithu@hoaithu:~/git/h2$ git commit -m "Commit test file 2" -a
+[master 5311e1d] Commit test file 2
+ 1 file changed, 5 insertions(+)
+ create mode 100644 c1.txt
+hoaithu@hoaithu:~/git/h2$ git push origin master
+Username for 'https://github.com': nguyenthihoaithu1923@gmail.com
+Password for 'https://nguyenthihoaithu1923@gmail.com@github.com': 
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 305 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/thunth/hello-2.git
+   29e1d17..5311e1d  master -> master
+hoaithu@hoaithu:~/git/h2$ 
+
